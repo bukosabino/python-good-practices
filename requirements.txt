@@ -1,7 +1,18 @@
-# Python good practices style code
+# Standarization code
 # -------------------------------------------------
 pylint==2.4.4
 mypy==0.761
+
+# Autoformat
+# -------------------------------------------------
 black==19.10b0
-coverage==5.0.3
 isort==4.3.21
+
+# Documentation
+# -------------------------------------------------
+Sphinx==2.3.1
+sphinx-rtd-theme==0.4.3
+
+# Testing
+# -------------------------------------------------
+coverage==5.0.3
