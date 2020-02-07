@@ -8,6 +8,7 @@ Some features:
 * pylint
 * black
 * coverage
+* isort
 
 
 ### Install dependencies
