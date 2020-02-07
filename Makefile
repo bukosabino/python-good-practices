@@ -24,8 +24,8 @@ test: typehint lint isort
 	coverage run test/__init__.py
 	coverage report -m
 
-# Formate code following Python Software Fundation style
-format:
+# Format the code following Python Software Fundation style
+format-fix:
 	black --target-version py36 --line-length 120 src/ test/
 
 # Generate UML diagrams
