@@ -1,4 +1,4 @@
-# Standarization code
+# Code standarization
 # -------------------------------------------------
 pylint==2.4.4
 mypy==0.761
