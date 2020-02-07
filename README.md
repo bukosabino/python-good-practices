@@ -9,6 +9,7 @@ Some features:
 * black
 * coverage
 * isort
+* sphinx
 
 
 ### Install dependencies
