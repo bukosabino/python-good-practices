@@ -26,7 +26,7 @@ test: typehint lint
 
 # Format the code following Python Software Fundation style
 format-fix:
-	black --target-version py36 --line-length 120 src/ test/
+	black --target-version py36 --line-length 80 src/ test/
 
 # Generate UML diagrams
 reverse-uml:
