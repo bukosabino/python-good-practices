@@ -20,7 +20,7 @@ lint: isort
 
 # Test package post checks
 test: typehint lint
-	coverage run unittest discover
+	coverage run -m unittest discover
 	coverage report -m --include=src/*
 
 # Format the code following Python Software Fundation style
