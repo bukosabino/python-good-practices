@@ -27,6 +27,10 @@ test: typehint lint
 format-fix:
 	black --target-version py36 --line-length 80 src/ test/
 
+# Generate sphinx automated documentation
+doc:
+	sphinx-build -b html source/ build/
+
 # Generate UML diagrams
 reverse-uml:
 	pyreverse src/ -o png -p src
