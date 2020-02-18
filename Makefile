@@ -8,11 +8,11 @@ typehint:
 
 # Check the order of imports
 isort:
-	isort --check-only --recursive src/ test/
+	isort --multi-line=3 --trailing-comma --force-grid-wrap=0 --use-parentheses --line-width=120 --check-only --recursive src/ test/
 
 # Sort the imports
 isort-fix:
-	isort --recursive src/ test/
+	isort --multi-line=3 --trailing-comma --force-grid-wrap=0 --use-parentheses --line-width=120 --recursive src/ test/
 
 # Check if the code is standard
 lint: isort
