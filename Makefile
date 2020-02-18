@@ -1,31 +1,35 @@
+LINE_LENGTH := 120
+SRC := src/
+TEST := test/
+
 # Install dependencies
 init:
 	pip install -r requirements.txt
 
 # Check python type hints
 typehint:
-	mypy --config-file mypy.ini --disallow-untyped-defs src/ test/
+	mypy --config-file mypy.ini --disallow-untyped-defs $(SRC) $(TEST)
 
 # Check the order of imports
 isort:
-	isort --multi-line=3 --trailing-comma --force-grid-wrap=0 --use-parentheses --line-width=120 --check-only --recursive src/ test/
+	isort --multi-line=3 --trailing-comma --force-grid-wrap=0 --use-parentheses --line-width=$(LINE_LENGTH) --check-only --recursive $(SRC) $(TEST)
 
 # Sort the imports
 isort-fix:
-	isort --multi-line=3 --trailing-comma --force-grid-wrap=0 --use-parentheses --line-width=120 --recursive src/ test/
+	isort --multi-line=3 --trailing-comma --force-grid-wrap=0 --use-parentheses --line-width=$(LINE_LENGTH) --recursive $(SRC) $(TEST)
 
 # Check if the code is standard
 lint: isort
-	pylint --rcfile=pylintrc src/ test/
+	pylint --rcfile=pylintrc $(SRC) $(TEST)
 
 # Test package post checks
 test: typehint lint
 	coverage run -m unittest discover
-	coverage report -m --include=src/*
+	coverage report -m --include=$(SRC)*
 
 # Format the code following Python Software Fundation style
 format-fix:
-	black --target-version py36 --line-length 80 src/ test/
+	black --target-version py36 --line-length $(LINE_LENGTH) $(SRC) $(TEST)
 
 # Generate sphinx automated documentation
 doc:
@@ -33,6 +37,6 @@ doc:
 
 # Generate UML diagrams
 reverse-uml:
-	pyreverse src/ -o png -p src
+	pyreverse $(SRC) -o png -p src
 	mkdir -p reverse_doc/
 	mv *.png reverse_doc/
