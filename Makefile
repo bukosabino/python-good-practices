@@ -30,6 +30,7 @@ test: typehint lint
 # Format the code following Python Software Fundation style
 format-fix:
 	black --target-version py36 --line-length $(LINE_LENGTH) $(SRC) $(TEST)
+	docformatter --in-place --blank --wrap-descriptions $(LINE_LENGTH) --wrap-summaries $(LINE_LENGTH) -r $(SRC)*.py
 
 # Generate sphinx automated documentation
 doc:
