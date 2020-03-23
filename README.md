@@ -42,6 +42,11 @@ make isort-fix
 make test
 ```
 
+### Generate Sphinx automated documentation
+```bash
+make doc
+```
+
 ### Format the python code following Python Software Foundation style
 ```bash
 make format
