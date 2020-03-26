@@ -12,11 +12,11 @@ typehint:
 
 # Check the order of imports
 isort:
-	isort --multi-line=3 --trailing-comma --force-grid-wrap=0 --use-parentheses --line-width=$(LINE_LENGTH) --check-only --recursive $(SRC) $(TEST)
+	isort -p test --multi-line=3 --trailing-comma --force-grid-wrap=0 --use-parentheses --line-width=$(LINE_LENGTH) --check-only --recursive $(SRC) $(TEST)
 
 # Sort the imports
 isort-fix:
-	isort --multi-line=3 --trailing-comma --force-grid-wrap=0 --use-parentheses --line-width=$(LINE_LENGTH) --recursive $(SRC) $(TEST)
+	isort -p test --multi-line=3 --trailing-comma --force-grid-wrap=0 --use-parentheses --line-width=$(LINE_LENGTH) --recursive $(SRC) $(TEST)
 
 # Check if the code is standard
 lint: isort
