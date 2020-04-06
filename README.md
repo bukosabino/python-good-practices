@@ -49,7 +49,7 @@ make doc
 
 ### Format the python code following Python Software Foundation style
 ```bash
-make format
+make format-fix
 ```
 
 ### Generate UML diagrams
